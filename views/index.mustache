@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/version-1/style.css"></link>
+
+    </head>
+
+    <body>
+        <h1>Add Trip</h1>
+
+        <form method = "POST" action = "/add-trip">
+            
+            <input type = "text" placeholder = "Enter trip title" name = "tripTitle" />
+            <input type = "date" placeholder = "Enter date of departure " name = "tripdateOfDeparture" />
+            <input type = "date" placeholder = "Enter date of return" name = "tripdateOfReturn" />
+            <input type = "text" placeholder = "Enter image" name = "tripimageUrl" />
+
+
+
+            <button>Add</button>
+        </form>
+
+        <ul>
+        {{#allTrips}} 
+        
+        <li>
+            {{title}} - <img src="{{imageUrl}}"> -{{dateOfDeparture}}-{{dateOfReturn}}
+            <input type="hidden" id="deleteId" name="tripID" value="tripID">
+
+        </li>
+
+        {{/allTrips}} 
+        </ul>
